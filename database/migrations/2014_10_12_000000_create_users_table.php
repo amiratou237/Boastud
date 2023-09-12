@@ -13,25 +13,29 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nom');
+            $table->string('name');
             $table->string('prenom');
             $table->string('age');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('niveau_étude');
-            $table->string('université');
-            $table->text('pp');
-            $table->text('desc');
-            $table->string('amis_id');
-            $table->string('publication_id');
-            $table->string('notification_id');
-            $table->string('message_id');
+            $table->string('niveau_etude');
+            $table->string('universite');
+            $table->string('pp');
+            $table->string('desc');
+            $table->string('amis_id')->nullable()->unsigned();
+            $table->foreign('amis_id')->references('id')->on('users');
+            $table->string('publication_id')->nullable()->unsigned();
+            $table->foreign('publication_id')->references('id')->on('publication');
+            $table->string('notification_id')->nullable()->unsigned();
+            $table->foreign('notification_id')->references('id')->on('notifications');
+            $table->string('message_id')->nullable()->unsigned();
+            $table->foreign('message_id')->references('id')->on('messages');
             $table->rememberToken();
             $table->timestamps();
-           });
-            
+        });
     }
+    
 
     /**
      * Reverse the migrations.

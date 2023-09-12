@@ -118,31 +118,31 @@
 		<div class="verticle-center">
 			<div class="signup-form">
 				<h4><i class="icofont-lock"></i> Inscription</h4>
-				<form method="post" class="c-form">
+				<form method="POST" action="{{ route('register') }}" class="c-form">
 				@csrf
 					<div class="row merged-10">
 						<div class="col-lg-12"><h4>Parlez nous un peu de vous !</h4></div>
 						<div class="col-lg-6 col-sm-6 col-md-6">
-							<input type="text" placeholder="Votre nom">
+							<input type="text" name="name" placeholder="Votre nom">
 						</div>
 						<div class="col-lg-6 col-sm-6 col-md-6">
-							<input type="text" placeholder="Votre prénom">
+							<input type="text" name="prenom" placeholder="Votre prénom">
 						</div>
 						<div class="col-lg-6 col-sm-6 col-md-6">
-							<input type="text" placeholder="Votre âge">
+							<input type="number" name="age" placeholder="Votre âge">
 						</div>
 						<div class="col-lg-6 col-sm-6 col-md-6">
-							<input type="text" placeholder="Email@">
+							<input type="text" name="email" placeholder="Email@">
 						</div>
 						<div class="col-lg-6 col-sm-6 col-md-6">
-							<input type="password" placeholder="Mot de passe">
+							<input type="password" id="password" placeholder="Mot de passe">
 						</div>
 						
 						<div class="col-lg-6 col-sm-6 col-md-6">
-							<input type="number" placeholder="Niveau d'etude actuelle">
+							<input type="number" name="niveau_étude" placeholder="Niveau d'etude actuelle">
 						</div>
 						<div class="col-lg-6 col-sm-6 col-md-6">
-							<input type="text" placeholder="Votre université">
+							<input type="text" name="université" placeholder="Votre université">
 						</div>
 						
 						<div class="col-lg-12">
