@@ -15,10 +15,11 @@ return new class extends Migration
             $table->increments('id');
             $table->string('nom');
             $table->string('prenom');
+            $table->string('age');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('nivéau_étude');
+            $table->string('niveau_étude');
             $table->string('université');
             $table->text('pp');
             $table->text('desc');

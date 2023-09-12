@@ -9,6 +9,20 @@
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
+		<!-- prénom -->
+		<div>
+            <x-input-label for="prenom" :value="__('prenom')" />
+            <x-text-input id="prenom" class="block mt-1 w-full" type="text" name="prenom" :value="old('prenom')" required autofocus autocomplete="prenom" />
+            <x-input-error :messages="$errors->get('prenom')" class="mt-2" />
+        </div>
+
+		<!-- age -->
+		<div>
+            <x-input-label for="age" :value="__('age')" />
+            <x-text-input id="age" class="block mt-1 w-full" type="number" name="age" :value="old('age')" required autofocus autocomplete="age" />
+            <x-input-error :messages="$errors->get('age')" class="mt-2" />
+        </div>		
+
         <!-- Email Address -->
         <div class="mt-4">
             <x-input-label for="email" :value="__('Email')" />
@@ -39,6 +53,19 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
+		<!-- niveau -->
+		<div>
+            <x-input-label for="niveau_étude" :value="__('niveau_étude')" />
+            <x-text-input id="niveau_étude" class="block mt-1 w-full" type="number" name="niveau_étude" :value="old('niveau_étude')" required autofocus autocomplete="niveau_étude" />
+            <x-input-error :messages="$errors->get('niveau_étude')" class="mt-2" />
+        </div>
+
+        <!-- université -->
+        <div>
+            <x-input-label for="université" :value="__('université')" />
+            <x-text-input id="université" class="block mt-1 w-full" type="text" name="université" :value="old('université')" required autofocus autocomplete="université" />
+            <x-input-error :messages="$errors->get('université')" class="mt-2" />
+        </div>
         <div class="flex items-center justify-end mt-4">
             <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
                 {{ __('Already registered?') }}
@@ -78,10 +105,10 @@
 	<div class="authtication bluesh high-opacity">
 		<div class="verticle-center">
 			<div class="welcome-note">
-				<div class="logo"><img src="{{asset('socimo/images/logo.png')}}" alt=""><span>Socimo</span></div>
-				<h1>Welcome to Socimo</h1>
+				<div class="logo"><img src="{{asset('socimo/images/logo.png')}}" alt=""><span>Boastud</span></div>
+				<h1>Bienvenue à Boastud</h1>
 				<p>
-					Socimo is a one and only plateform for the researcheres, students, and Acdamic people. Every one can join this plateform free and share his ideas and research with seniors and juniours comments and openions. 
+					Boastud est le reseau social pour les étudiants, et tous les professionels de l'académie. Faites partie de la grande equipe, publier,commenter et partager.
 				</p>
 			</div>
 			<div class="bg-image" style="background-image: url({{asset('socimo/images/resources/login-bg.png')}})"></div>
@@ -90,62 +117,40 @@
 	<div class="auth-login">
 		<div class="verticle-center">
 			<div class="signup-form">
-				<h4><i class="icofont-lock"></i> Singup</h4>
+				<h4><i class="icofont-lock"></i> Inscription</h4>
 				<form method="post" class="c-form">
+				@csrf
 					<div class="row merged-10">
-						<div class="col-lg-12"><h4>What type of researcher are you?</h4></div>
+						<div class="col-lg-12"><h4>Parlez nous un peu de vous !</h4></div>
 						<div class="col-lg-6 col-sm-6 col-md-6">
-							<input type="text" placeholder="First Name">
+							<input type="text" placeholder="Votre nom">
 						</div>
 						<div class="col-lg-6 col-sm-6 col-md-6">
-							<input type="text" placeholder="Last Name">
+							<input type="text" placeholder="Votre prénom">
+						</div>
+						<div class="col-lg-6 col-sm-6 col-md-6">
+							<input type="text" placeholder="Votre âge">
 						</div>
 						<div class="col-lg-6 col-sm-6 col-md-6">
 							<input type="text" placeholder="Email@">
 						</div>
 						<div class="col-lg-6 col-sm-6 col-md-6">
-							<input type="password" placeholder="Password">
+							<input type="password" placeholder="Mot de passe">
+						</div>
+						
+						<div class="col-lg-6 col-sm-6 col-md-6">
+							<input type="number" placeholder="Niveau d'etude actuelle">
 						</div>
 						<div class="col-lg-6 col-sm-6 col-md-6">
-							<input type="radio" id="student" name="acdamic" value="student">
-							<label for="student">Academic Or Student</label>
-						</div>
-						<div class="col-lg-6 col-sm-6 col-md-6">
-							<input type="radio" id="ngo" name="acdamic" value="ngo">
-							<label for="ngo">Corporate, Govt, Or NGO Person</label>
-						</div>
-						<div class="col-lg-6 col-sm-6 col-md-6">
-							<input type="radio" id="medical" name="acdamic" value="medical">
-							<label for="medical">Medical</label>
-						</div>
-						<div class="col-lg-6 col-sm-6 col-md-6">
-							<input type="radio" id="other" name="acdamic" value="other">
-							<label for="other">Not a Rsearcher</label>
-						</div>
-						<div class="col-lg-6 col-sm-6 col-md-6">
-							<input type="text" placeholder="Institute, Company">
-						</div>
-						<div class="col-lg-6 col-sm-6 col-md-6">
-							<input type="text" placeholder="Department">
-						</div>
-						<div class="col-lg-12">
-							<input type="text" placeholder="Your Position">
-						</div>
-						<div class="col-lg-12">
-							<div class="gender">
-							  <input type="radio" id="male" name="gender" value="male">
-							  <label for="male">Male</label>
-							  <input type="radio" id="female" name="gender" value="female">
-							  <label for="female">Female</label>
-							</div>	
+							<input type="text" placeholder="Votre université">
 						</div>
 						
 						<div class="col-lg-12">
 							<div class="checkbox">
 								<input type="checkbox" id="checkbox" checked>
-								<label for="checkbox"><span>I agree the terms of Services and acknowledge the privacy policy</span></label>
+								<label for="checkbox"><span>J'accepte les conditions des services et je reconnais la politique de confidentialité</span></label>
 							</div>
-							<button class="main-btn" type="submit"><i class="icofont-key"></i> Signup</button>
+							<button class="main-btn" type="submit"><i class="icofont-key"></i> Je m'inscris</button>
 						</div>
 					</div>
 				</form>
