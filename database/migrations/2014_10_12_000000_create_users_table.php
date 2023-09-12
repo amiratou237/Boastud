@@ -21,12 +21,12 @@ return new class extends Migration
             $table->string('password');
             $table->string('niveau_etude');
             $table->string('universite');
-            $table->string('pp');
-            $table->string('desc');
+            $table->string('pp')->nullable();
+            $table->string('desc')->nullable();
             $table->string('amis_id')->nullable()->unsigned();
             $table->foreign('amis_id')->references('id')->on('users');
             $table->string('publication_id')->nullable()->unsigned();
-            $table->foreign('publication_id')->references('id')->on('publication');
+            $table->foreign('publication_id')->references('id')->on('posts');
             $table->string('notification_id')->nullable()->unsigned();
             $table->foreign('notification_id')->references('id')->on('notifications');
             $table->string('message_id')->nullable()->unsigned();

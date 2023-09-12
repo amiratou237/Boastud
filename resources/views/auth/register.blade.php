@@ -56,14 +56,14 @@
 		<!-- niveau -->
 		<div>
             <x-input-label for="niveau_étude" :value="__('niveau_étude')" />
-            <x-text-input id="niveau_étude" class="block mt-1 w-full" type="number" name="niveau_étude" :value="old('niveau_étude')" required autofocus autocomplete="niveau_étude" />
+            <x-text-input id="niveau_étude" class="block mt-1 w-full" type="number" name="niveau_étude" :value="old('niveau_étude')" required autofocus autocomplete="niveau_etude" />
             <x-input-error :messages="$errors->get('niveau_étude')" class="mt-2" />
         </div>
 
         <!-- université -->
         <div>
             <x-input-label for="université" :value="__('université')" />
-            <x-text-input id="université" class="block mt-1 w-full" type="text" name="université" :value="old('université')" required autofocus autocomplete="université" />
+            <x-text-input id="université" class="block mt-1 w-full" type="text" name="université" :value="old('université')" required autofocus autocomplete="universite" />
             <x-input-error :messages="$errors->get('université')" class="mt-2" />
         </div>
         <div class="flex items-center justify-end mt-4">
@@ -139,10 +139,10 @@
 						</div>
 						
 						<div class="col-lg-6 col-sm-6 col-md-6">
-							<input type="number" name="niveau_étude" placeholder="Niveau d'etude actuelle">
+							<input type="number" name="niveau_etude" placeholder="Niveau d'etude actuelle">
 						</div>
 						<div class="col-lg-6 col-sm-6 col-md-6">
-							<input type="text" name="université" placeholder="Votre université">
+							<input type="text" name="universite" placeholder="Votre université">
 						</div>
 						
 						<div class="col-lg-12">
